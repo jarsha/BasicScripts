@@ -1,0 +1,15 @@
+Using Etree since im not sure if they will have C libraries locally.
+
+from xml.etree import Element as X
+
+"""XML information, verions, etc etc etc
+<info>
+	<info sub tree>
+		<Whatimlookingfor>12345</Whatimlookingfor>
+	</info sub tree>
+</info>
+""".strip()
+Information = X.fromstring(xml).find('info/infosub/Whatimlookingfor')
+
+
+It will find the value 12345 and put it into a file named Information. For each new script i need to make, i would just have it append the information as a new line into the Information file. 
